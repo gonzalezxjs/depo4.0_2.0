@@ -1,0 +1,64 @@
+
+.yuca{
+    margin-top: 50px;
+    margin: auto;
+}
+
+.modificar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.modificar2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.cont-text{
+    width: 600px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #d1d1d19a;
+    border-radius: 10px;
+}
+
+h3{
+    text-align: center;
+    padding: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+p{
+    text-align: justify;
+    padding: 0 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.img, .img2{
+    width: 500px;
+    height: 300px;
+    border-radius: 20px;
+}
+@media (max-width:920px){
+    .img, .img2{
+        width: 300px;
+        height: 200px;
+        border-radius: 20px;
+    }
+}
+
+
+.cont-img{
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}

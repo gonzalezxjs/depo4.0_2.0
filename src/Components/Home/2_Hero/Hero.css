@@ -1,0 +1,17 @@
+
+div.father{
+  width: auto;
+}
+
+div.father-2{
+  margin: auto;
+}
+
+img.herow{
+  width: 100%;
+  margin: auto;
+  -webkit-filter: brightness(50%);  
+  -moz-filter: brightness(50%);
+  -o-filter: brightness(50%);
+  -ms-filter: brightness(50%);
+}
