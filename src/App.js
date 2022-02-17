@@ -1,7 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HomeIndex from './routes/HomeIndex'
 import AdminIndex from './routes/AdminIndex';
-import {BrowserRouter, Route, Router, Routes} from 'react-router-dom'
+import {BrowserRouter, Route, Router, Routes} from 'react-router-dom';
+import LoginForApp from './routes/LoginForApp';
+import UserIndex from './routes/UserIndex';
 
 function App() {
   return (
@@ -10,6 +12,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeIndex/>}/>
           <Route path="/admin" element={<AdminIndex/>}/>
+          <Route path="/signin" element={<LoginForApp/>}/>
+          <Route path="/user" element={<UserIndex/>}/>
+
         </Routes>
       </BrowserRouter>
     </div>

@@ -29,7 +29,7 @@ const NavBarApp = () => {
             </Nav>
 
             <Nav className="right_part">
-              <Link className="nav-link" to="/signup">
+              <Link className="nav-link" to="/signin">
                 Iniciar sesión
               </Link>
 

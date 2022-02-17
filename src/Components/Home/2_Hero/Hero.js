@@ -1,6 +1,5 @@
 import React from "react";
 import "./Hero.css";
-import LoginApp from "./2.1. Login/LoginApp";
 import HeroImage from "../../assets/img/pexels-pixabay-163403.jpg";
 
 const Slider = () => {

@@ -1,0 +1,113 @@
+.contenedor {
+  width: auto;
+  display: flex;
+  margin: auto;
+  
+}
+
+.login-box {
+  display: block;
+  width: 400px;
+  min-height: 400px;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
+  padding: 40px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+  background-color: black;
+  margin: auto;
+}
+
+.Ini{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: azure;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+div .user-box p {
+  margin: auto;
+}
+.login-box .user-box {
+  position: relative;
+}
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.664);
+  border-radius: 50px;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  border: #ffffff 2px solid;
+}
+  
+.contenedor .login-box form button.ingreso {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fdfdfde7;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .6s;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+  border-radius: 50px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border: transparent;
+  background-color: black;
+}
+  
+.login-box button.ingreso:hover {
+  background: #0000006b;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 0 0 5px #03f47b,
+  0 0 25px #03f47b,0 0 50px #03f47b,0 0 100px #03f47b;
+}
+
+.indicadores {
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.contenedor .login-box form .resetpasswd {
+  font-size: 13px;
+  margin-top: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  color: #fdfdfde7;
+  text-decoration: none;
+  font-weight: 500;
+
+}
+
+div.Error {
+  color: rgb(124, 28, 28);
+  margin-bottom: 10px;
+}
+
+@media (max-width:500px){
+  .contenedor {
+    width: 310px;
+    display: flex;
+    margin: auto;
+  }
+}
+
