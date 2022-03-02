@@ -90,7 +90,7 @@ const FooterApp = () => {
 
           <div className="box_copyright">
             <p>
-              Copyright © 2021 | <b>Deportes 4.0</b> | Todos los derechos reservados
+              Copyright © 2022 | <b>Deportes 4.0</b> | Todos los derechos reservados
             </p>
           </div>
 

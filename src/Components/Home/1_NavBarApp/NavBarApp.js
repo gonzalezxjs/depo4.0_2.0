@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavbarApp.css";
-import icono from "../../assets/img/favicon.ico";
+import icono from "../../assets/img/logo.png";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ const NavBarApp = () => {
         
         <Container>
           
-          <img classname="logo" src={icono} />
+          <img class="logo" src={icono} />
           <Navbar.Brand href="/">Deportes 4.0</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

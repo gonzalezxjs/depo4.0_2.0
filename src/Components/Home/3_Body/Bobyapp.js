@@ -41,7 +41,7 @@ const Bobyapp = () => {
           <div className="cont-img">
             <img
               className="img"
-              src="https://st4.depositphotos.com/1229718/27798/i/600/depositphotos_277982518-stock-photo-active-lifestyle-and-mental-function.jpg"
+              src="https://image.shutterstock.com/shutterstock/photos/1429399772/display_1500/stock-photo-active-lifestyle-and-mental-function-or-psychological-benefits-of-sport-and-exercise-as-a-group-of-1429399772.jpg"
             />
           </div>
         </div>

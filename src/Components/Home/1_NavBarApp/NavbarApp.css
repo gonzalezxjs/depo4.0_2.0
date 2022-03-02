@@ -26,11 +26,13 @@ div#basic-navbar-nav.navbar-collapse.collapse{
 div.center.navbar-nav{
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    gap: 20px;
 }
 
 a.navbar-brand{
     font-family: 'Vujahday Script', cursive;
-    font-size: 30px;
+    font-size: 26px;
     margin: auto;
     color: rgb(0, 0, 0) !important;
 }
@@ -38,14 +40,17 @@ a.navbar-brand{
 a.nav-link{
     font-size: 20px;
     color: rgb(0, 0, 0) !important;
+    border-radius: 30px;
+    margin-right: 5px;
+    margin-right: 5px;
+
 }
 a.nav-link:hover{
-    border-top: 0.1rem solid #68d162;
     transition: 0.3s ease-in;
-    border-radius: 30%;
+    background-color: rgba(184, 185, 185, 0.459);
 }
 
-img{
-    width: 60px;
+img.logo{
+    width: 50px;
     margin-right: 5px;
 }

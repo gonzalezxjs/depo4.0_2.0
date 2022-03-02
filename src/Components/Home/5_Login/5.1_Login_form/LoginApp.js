@@ -3,15 +3,6 @@ import "./LoginApp.css";
 import { Formik } from "formik";
 
 const Login = () => {
-  const [valor1, setValor1] = useState(0);
-  const [valor2, setValor2] = useState(0);
-  const [resultado, setResultado] = useState(0);
-
-  const Resultado = () => {
-    let resultados = 0;
-
-    setResultado(resultados);
-  };
 
   return (
     <div className="contenedor">
@@ -88,9 +79,15 @@ const Login = () => {
                 )}
               </div>
 
-              <a href="#" className="resetpasswd">
+              <a href="/recoverpass" className="resetpasswd">
                 ¿Olvidaste la contraseña?
               </a>
+
+              
+              <div class="remind_me">
+                <input type="checkbox" class="check"/>
+                <p class="check">Recuerdame</p>
+              </div>
 
               <button type="submit" className="ingreso">
                 login
