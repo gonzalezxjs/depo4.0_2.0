@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./NavbarApp.css";
 import icono from "../../assets/img/logo.png";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const NavBarApp = () => {
+
+  useEffect(() => {
+    if (window.location.href == "http://localhost:3000/signin"){
+      console.log(window.location.href);
+      document.getElementById( "login_btn" ).style.display = 'none';
+    }else{
+      document.getElementById( "login_btn" ).style.display = 'block';
+    }
+  }, [window.location.href == "http://localhost:3000/signin"])
+  
+
   return (
     <div>
       <Navbar expand="lg">
@@ -28,8 +39,8 @@ const NavBarApp = () => {
               </Link>
             </Nav>
 
-            <Nav className="right_part">
-              <Link className="nav-link" to="/signin">
+            <Nav  id="login_btn"  className="right_part">
+              <Link onClick={NavBarApp} className="nav-link" to="/signin">
                 Iniciar sesión
               </Link>
 

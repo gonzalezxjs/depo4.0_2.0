@@ -35,7 +35,7 @@ const AdminIndex = () => {
             </li>
 
             <li>
-              <a href="/">
+              <a href="/account!=create">
                 <span className="icon">
                   <ion-icon name="people-circle-outline"></ion-icon>
                 </span>
