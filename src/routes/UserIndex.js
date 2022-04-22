@@ -1,12 +1,12 @@
 import React from 'react';
-import User from '../Components/Usuarios/1_home dashboard/User.js';
+import UserIndex from '../Components/Usuarios/1_home dashboard/1.1_Home/Home_bashboard_user';
 
-const UserIndex = () => {
+const UserIndexx = () => {
   return (
     <div>
-        <User/>
+        <UserIndex/>
     </div>
   )
 }
 
-export default UserIndex
+export default UserIndexx

@@ -7,14 +7,7 @@
     box-sizing: border-box;
 }
 
-:root{
-    --green: #3df07e;
-    --white: #fff;
-    --grey: #f5f5f5;
-    --black1: #222;
-    --black2: #999;
-}
-    
+
 body{ 
     min-height: 100vh;
     overflow-x: hidden;
@@ -29,8 +22,8 @@ body{
     position: fixed;
     width: 300px;
     height: 100%;
-    background: var(--green);
-    border-left: 10px solid  var(--green);
+    background: var(--black1);;
+    border-left: 10px solid  var(--black1);
     transition: 0.5%;
     overflow: hidden;
 
@@ -70,7 +63,7 @@ body{
     color: var(--white);
 }
 .navigation ul li:hover a{
-    color: var(--green);
+    color: var(--black1);
 }
 
 .navigation ul li a .icon{
@@ -139,22 +132,12 @@ body{
     align-items: center;
     padding: 0 10px;
 }
-    
-.toggle{
-    position: relative; 
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    cursor: pointer;
-}
 
 .search{
     position: relative;
     width: 400px;
     margin: auto;
+    visibility: hidden; /* Quitar o dejar  */ 
 }
 
 
@@ -175,9 +158,10 @@ body{
 }
 .search label ion-icon{
     position: absolute;
-    top: 4px;
-    left: 5px;
+    top: 2px;
+    left: 4px;
     font-size: 2em;
+    right: 3px;
 }
     
     

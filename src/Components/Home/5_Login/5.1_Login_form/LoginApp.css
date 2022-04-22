@@ -79,7 +79,6 @@ div .user-box p {
 .login-box button.ingreso:hover {
   background: #0000006b;
   color: white;
-  border-radius: 50px;
   box-shadow: 0 0 5px #03f47b,
     0 0 15px #03f47b,0 0 20px #03f47b,0 0 30px #03f47b;
 }

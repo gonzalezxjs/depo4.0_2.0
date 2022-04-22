@@ -64,6 +64,10 @@ const UserIndex = () => {
           </ul>
         </div>
 
+        <div class="main">
+          <div class="topbar">
+          </div>
+        </div>
       </div>
     </div>
   );
