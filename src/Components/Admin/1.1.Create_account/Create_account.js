@@ -9,7 +9,11 @@ import './create_account.css';
 function Create_account() {
 
   const baseUrl = "http://127.0.0.1:8080/depo/";
-
+  const [dataDoc, setDataDoc] = useState([]);
+  const [dataSangre, setDataSangre] = useState([]);
+  const [dataRol, setDataRol] = useState([]);
+  const [dataGenero, setDataGenero] = useState([]);
+  const [dataEstado, setDataEstado] = useState([]);
   const [data, setData] = useState([]);
   const [modalInsertar, setModalInsertar] = useState(false);
   const [modalEditar, setModalEditar] = useState(false);
@@ -19,12 +23,16 @@ function Create_account() {
     nom1_usu: "",  
     nom2_usu: "", 
     ape1_usu: "", 
-    ape2_usu: "", 
+    ape2_usu: "",
+    fecha_nac_usu: "",
     correo_usu: "", 
     contrasena_usu: "",
+    id_documento: "",
     num_docu: "", 
-    ciudad_usu: "", 
-    departamento_usu: "" 
+    id_estado: "",
+    id_genero: "",
+    id_rol: "",
+    id_sangre: ""
   });
 
   const handleChange = (e) => {
@@ -64,7 +72,47 @@ function Create_account() {
       setData(response.data);
     });
   };
+
+  const peticionDoc = async () => {
+    var f = new FormData();
+    f.append("METHOD", "DOC");
+    await axios.post(baseUrl, f).then((response) => {
+      setDataDoc(response.data);
+    });
+  };
+
+  const peticionSangre = async () => {
+    var f = new FormData();
+    f.append("METHOD", "SANGRE");
+    await axios.post(baseUrl, f).then((response) => {
+      setDataSangre(response.data);
+    });
+  };
+
+  const peticionRol= async () => {
+    var f = new FormData();
+    f.append("METHOD", "ROL");
+    await axios.post(baseUrl, f).then((response) => {
+      setDataRol(response.data);
+    });
+  };
+
+  const peticionGenero= async () => {
+    var f = new FormData();
+    f.append("METHOD", "GENERO");
+    await axios.post(baseUrl, f).then((response) => {
+      setDataGenero(response.data);
+    });
+  };
   
+  const peticionEstado= async () => {
+    var f = new FormData();
+    f.append("METHOD", "ESTADO");
+    await axios.post(baseUrl, f).then((response) => {
+      setDataEstado(response.data);
+    });
+  };
+
   const peticionPost = async () => {
     var f = new FormData();
 
@@ -74,10 +122,14 @@ function Create_account() {
     f.append("nom2_usu", dataUsario.nom2_usu);
     f.append("ape1_usu", dataUsario.ape1_usu);
     f.append("ape2_usu", dataUsario.ape2_usu);
+    f.append("fecha_nac_usu", dataUsario.fecha_nac_usu);
     f.append("correo_usu", dataUsario.correo_usu);
     f.append("contrasena_usu", dataUsario.contrasena_usu);
-    f.append("ciudad_usu", dataUsario.ciudad_usu);
-    f.append("departamento_usu", dataUsario.departamento_usu);
+    f.append("id_documento",dataUsario.id_documento);
+    f.append("id_rol",dataUsario.id_rol);
+    f.append("id_estado",dataUsario.id_estado);
+    f.append("id_genero",dataUsario.id_genero);
+    f.append("id_sangre",dataUsario.id_sangre);
     f.append("METHOD", "POST");
 
     await axios.post(baseUrl, f).then((response) => {
@@ -98,8 +150,10 @@ function Create_account() {
     f.append("ape2_usu", dataUsario.ape2_usu);
     f.append("correo_usu", dataUsario.correo_usu);
     f.append("contrasena_usu", dataUsario.contrasena_usu);
-    f.append("ciudad_usu", dataUsario.ciudad_usu);
-    f.append("departamento_usu", dataUsario.departamento_usu);
+    f.append("id_documento",dataUsario.id_documento);
+    f.append("id_estado",dataUsario.id_estado);
+    f.append("id_genero",dataUsario.id_genero);
+    f.append("id_sangre",dataUsario.id_sangre);
     f.append("METHOD", "PUT");
 
     await axios
@@ -116,9 +170,10 @@ function Create_account() {
             Usuario.ape2_usu = dataUsario.ape2_usu;
             Usuario.correo_usu = dataUsario.correo_usu;
             Usuario.contrasena_usu = dataUsario.contrasena_usu;
-            Usuario.ciudad_usu = dataUsario.ciudad_usu;
-            Usuario.departamento_usu = dataUsario.departamento_usu;
-            
+            Usuario.id_documento = dataUsario.id_documento;
+            Usuario.id_estado = dataUsario.id_estado;
+            Usuario.id_genero = dataUsario.id_genero;
+            Usuario.id_sangre = dataUsario.id_sangre;
           }
           console.log(response);
         });
@@ -151,6 +206,28 @@ function Create_account() {
     peticionGet();
   }, [data]);
 
+  useEffect(() => {
+    peticionDoc();
+  }, [dataDoc]);
+
+  useEffect(() => {
+    peticionSangre();
+  }, [dataSangre]);
+
+  useEffect(() => {
+    peticionRol();
+  }, [dataRol]);
+
+  useEffect(() => {
+    peticionGenero();
+  }, [dataGenero]);
+
+  useEffect(() => {
+    peticionEstado();
+  }, [dataEstado]);
+
+
+
 
   return (
  
@@ -168,8 +245,8 @@ function Create_account() {
             <th>Identificación</th>
             <th>Nombre</th>
             <th>Correo</th>
-            <th>Departamento</th>
-            <th>Ciudad</th>
+
+
           </tr>
         </thead>
         <tbody>
@@ -178,8 +255,6 @@ function Create_account() {
               <td>{Data.num_docu}</td>
               <td>{Data.nom1_usu} {Data.nom2_usu} {Data.ape1_usu} {Data.ape2_usu}</td>
               <td>{Data.correo_usu}</td>
-              <td>{Data.departamento_usu}</td>
-              <td>{Data.ciudad_usu}</td>
               <td>
                 <button
                   className="btn btn-primary"
@@ -203,10 +278,23 @@ function Create_account() {
 
           <div className="form-group">
             
-            <label>Número de Identificación:</label>
+            <label>Tipo de identificación:</label>
+            <br></br>
+            <select
+              className="form-control"
+              name="id_documento"
+              onChange={handleChange}
+            >
+              <option value="">Seleccione un tipo de identificación</option>
+              {dataDoc.map((Documento) => (
+              <option value={Documento.id_documento}>{Documento.nom_documento}</option>
+              ))}
+            </select>
+
+            <label>Número de identificación:</label>
             <br></br>
             <input
-              type="text"
+              type="number"
               className="form-control"
               name="num_docu"
               onChange={handleChange}
@@ -247,6 +335,15 @@ function Create_account() {
               name="ape2_usu"
               onChange={handleChange}
             ></input>
+
+            <label>Fecha de nacimiento:</label>
+            <br></br>
+            <input
+              type="text"
+              className="form-control"
+              name="fecha_nac_usu"
+              onChange={handleChange}
+            ></input>
  
 
             <label>Correo electronico:</label>
@@ -267,25 +364,61 @@ function Create_account() {
               onChange={handleChange}
             ></input>
 
-            <label>Departamento:</label>
+            <label>Estado del usuario:</label>
             <br></br>
-            <input
-              type="text"
+            <select
               className="form-control"
-              name="departamento_usu"
+              name="id_estado"
               onChange={handleChange}
-            ></input>
+            >
+              <option value="">Seleccione el estado</option>
+              {dataEstado.map((Estado) => (
+              <option value={Estado.id_estado}>{Estado.nom_estado}</option>
+              ))}
+            </select>
 
-            <label>Ciudad:</label>
+            <label>Género:</label>
             <br></br>
-            <input
-              type="text"
+            <select
               className="form-control"
-              name="ciudad_usu"
+              name="id_genero"
               onChange={handleChange}
-            ></input>
+            >
+              <option value="">Seleccione el género</option>
+              {dataGenero.map((Genero) => (
+              <option value={Genero.id_genero}>{Genero.nom_genero}</option>
+              ))}
+            </select>
+
+            <label>Tipo de rol:</label>
+            <br></br>
+            <select
+              className="form-control"
+              name="id_rol"
+              onChange={handleChange}
+            >
+              <option value="">Seleccione el rol</option>
+              {dataRol.map((Rol) => (
+              <option value={Rol.id_rol}>{Rol.nom_rol}</option>
+              ))}
+            </select>
+
+            <label>Tipo de sangre:</label>
+            <br></br>
+            <select
+              className="form-control"
+              name="id_sangre"
+              onChange={handleChange}
+            >
+              <option value="">Seleccione un tipo de sangre</option>
+              {dataSangre.map((Sangre) => (
+              <option value={Sangre.id_sangre}>{Sangre.nom_sangre}</option>
+              ))}
+            </select>
+            
           </div>
         </ModalBody>
+
         <ModalFooter>
           <button className="btn btn-primary" onClick={() => peticionPost()}>
             Insertar
@@ -295,7 +428,7 @@ function Create_account() {
             className="btn btn-danger"
             onClick={() => abrirCerrarModalInsertar()}
           >
-            Cancerlar
+            Cancelar
           </button>
         </ModalFooter>
       </Modal>

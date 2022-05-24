@@ -18,7 +18,7 @@ function App() {
           <Route path="/signin" element={<LoginForApp/>}/>
           <Route path="/user" element={<UserIndex/>}/>
           <Route path="/recoverpass" element={<RecoverPassword/>}/>
-          <Route path="/account!=create" element={<CreateAccount/>}/>
+          <Route path="/create" element={<CreateAccount/>}/>
           <Route path="contact_us" element={<ContactUs/>}/>
         </Routes>
       </BrowserRouter>

@@ -1,8 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./LoginApp.css";
 import { Formik } from "formik";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const Login = () => {
+
+  const URL_LOGIN = "http://localhost:8080/depo/ginlo/login.php";
+
+  const enviarData = async (url, datos)=>{
+
+  const resp = await fetch (url, {
+    method: 'POST',
+    body: JSON.stringify(datos),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }); 
+
+  const json = await resp.json();
+  //console.log(json)
+
+  return json;  
+  }
+
+  let navigate = useNavigate();
+
+  const handleLogin = async () => {
+    const datos = {
+      "correo_usu" : refCorreo.current.value,
+      "contrasena_usu" : refContraseña.current.value
+    }
+    const respuestaJson = await enviarData( URL_LOGIN, datos );
+    console.log("respuesta desde el evento", respuestaJson);
+    const conectado = (respuestaJson.conectado)
+    const id_rol = (respuestaJson.id_rol)
+    if(conectado === true &  id_rol == "1"){
+      navigate("/admin")
+        }else if(conectado === true &  id_rol == "3 "){
+          navigate("/user")
+        } 
+        else {
+          
+          console.log("Error")
+        } 
+  }
+
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+  
+  const refCorreo = useRef(null);
+
+  const refContraseña = useRef(null);
 
   return (
     <div className="contenedor">
@@ -37,12 +88,9 @@ const Login = () => {
 
             return errores;
           }}
-          onSubmit={(valores) => {
-            console.log("Formulario Enviado");
-          }}
         >
           {({ values, errors, handleSubmit, handleChange, handleBlur }) => (
-            <form onSubmit={handleSubmit}>
+            <form onSubmit = {onSubmit} action="" >
               <div className="user-box">
                 <div className="indicadores">
                   <p>Correo</p>
@@ -53,9 +101,7 @@ const Login = () => {
                   id="correo"
                   name="correo"
                   placeholder=""
-                  value={values.correo}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
+                  ref= {refCorreo}
                 />
                 {errors.correo && <div className="Error">{errors.correo}</div>}
               </div>
@@ -70,9 +116,7 @@ const Login = () => {
                   id="password"
                   name="password"
                   placeholder=""
-                  value={values.password}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
+                  ref= {refContraseña}
                 />
                 {errors.password && (
                   <div className="Error">{errors.password}</div>
@@ -89,7 +133,7 @@ const Login = () => {
                 <p class="check">Recuerdame</p>
               </div>
 
-              <button type="submit" className="ingreso">
+              <button type="submit" className="ingreso" onClick={handleLogin}>
                 login
               </button>
 
