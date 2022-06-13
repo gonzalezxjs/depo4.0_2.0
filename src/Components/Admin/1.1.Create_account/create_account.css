@@ -15,3 +15,6 @@ div.App{
     height: calc(100vh - 400px);
 }
 
+.main button.btn.btn-success{
+}
+

@@ -4,6 +4,7 @@ import axios from "axios";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './create_account.css';
+import Admin from "../1_home dashboard/Admin";
 
 
 function Create_account() {
@@ -232,6 +233,10 @@ function Create_account() {
   return (
  
     <div className="App">
+
+      <Admin></Admin>
+
+      <div class="main">
       <button
         className="btn btn-success"
         onClick={() => abrirCerrarModalInsertar()}
@@ -561,6 +566,8 @@ function Create_account() {
           </button>
         </ModalFooter>
       </Modal>
+      </div>
+      
     </div>
 
     );

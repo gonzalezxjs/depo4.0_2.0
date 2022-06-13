@@ -72,19 +72,6 @@ const AdminIndex = () => {
           </ul>
         </div>
 
-        <div class="main">
-          <div class="topbar">
-            <div class="toggle">
-              <ion-icon name="grid-outline"></ion-icon>
-            </div>
-            <div class="search">
-              <label>
-                <input type="text" placeholder="Search here" />
-                <ion-icon name="search-circle-outline"></ion-icon>
-              </label>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

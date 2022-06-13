@@ -7,9 +7,7 @@ import FooterApp from '../Components/Home/4_Footer/FooterApp';
 const Create_account_form = () => {
   return (
     <div>
-        <NavBarApp/>
         <Create_account/>
-        <FooterApp/>
     </div>
   )
 }

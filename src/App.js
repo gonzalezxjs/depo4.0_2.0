@@ -7,6 +7,7 @@ import UserIndex from './routes/UserIndex';
 import RecoverPassword from './routes/RecoverPassword';
 import CreateAccount from './routes/Create_account_form';
 import ContactUs from './routes/ContactUs';
+import Test from './Components/Admin/1.2.Test/Test';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="/recoverpass" element={<RecoverPassword/>}/>
           <Route path="/create" element={<CreateAccount/>}/>
           <Route path="contact_us" element={<ContactUs/>}/>
+          <Route path="/admin/test" element={<Test/>}/>
+
         </Routes>
       </BrowserRouter>
     </div>
