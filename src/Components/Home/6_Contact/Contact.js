@@ -10,7 +10,7 @@ const Contactos = () => {
       <div className="content">
         <div className="contact-wrapper">
           <div className="contact-from">
-            <h3>Contáctanos</h3>
+            <h3>Contactar con servicio de ayuda</h3>
             <form action>
               <p>
                 <label>Nombre</label>

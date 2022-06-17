@@ -1,6 +1,8 @@
 import React from 'react';
 import Admin from '../1_home dashboard/Admin';
 import './Test.css';
+import  testImg from '../../assets/img/2916315.png';
+import viewTest from '../../assets/img/3281188.png';
 
 const Test = () => {
   return (
@@ -24,9 +26,11 @@ const Test = () => {
 
                             <div class="cont">
 
-                                <div class="imgen"></div>
+                                <div class="imgen">
+                                    <img src={testImg}></img>
+                                </div>
                                 <div class="btn">
-                                    <button>Go</button>
+                                    <a href="/admin/test/go"><button>Go</button></a>
                                 </div>
                             </div>
 
@@ -40,9 +44,11 @@ const Test = () => {
 
                             <div class="cont">
 
-                                <div class="imgen"></div>
+                                <div class="imgen">
+                                    <img src={viewTest}></img>
+                                </div>
                                 <div class="btn">
-                                    <button>Go</button>
+                                    <a href="/admin/test/view"><button>Go</button></a>
                                 </div>
                             </div>
 

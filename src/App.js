@@ -8,6 +8,8 @@ import RecoverPassword from './routes/RecoverPassword';
 import CreateAccount from './routes/Create_account_form';
 import ContactUs from './routes/ContactUs';
 import Test from './Components/Admin/1.2.Test/Test';
+import Perform  from './Components/Admin/1.Perform/Perform_test';
+import Help from './Components/Admin/3.Help/Help';
 
 function App() {
   return (
@@ -22,7 +24,8 @@ function App() {
           <Route path="/create" element={<CreateAccount/>}/>
           <Route path="contact_us" element={<ContactUs/>}/>
           <Route path="/admin/test" element={<Test/>}/>
-
+          <Route path="/admin/test/go" element={<Perform/>}/>
+          <Route path="/admin/help" element={<Help/>}/>
         </Routes>
       </BrowserRouter>
     </div>

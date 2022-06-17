@@ -17,7 +17,7 @@ const AdminIndex = () => {
             </li>
 
             <li>
-              <a href="/">
+              <a href="/admin">
                 <span className="icon">
                   <ion-icon name="home-outline"></ion-icon>
                 </span>
@@ -26,7 +26,7 @@ const AdminIndex = () => {
             </li>
 
             <li>
-              <a href="/">
+              <a href="/admin/test">
                 <span className="icon">
                   <ion-icon name="document-text-outline"></ion-icon>
                 </span>
@@ -43,17 +43,17 @@ const AdminIndex = () => {
               </a>
             </li>
 
-            <li>
-              <a href="/">
+            {/* <li>
+              <a href="#">
                 <span className="icon">
                   <ion-icon name="settings-outline"></ion-icon>
                 </span>
                 <span className="title">Configuración</span>
               </a>
-            </li>
+            </li> */}
 
             <li>
-              <a href="/">
+              <a href="/admin/help">
                 <span className="icon">
                   <ion-icon name="help-circle-outline"></ion-icon>
                 </span>

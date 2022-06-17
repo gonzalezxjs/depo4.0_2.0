@@ -6,15 +6,16 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-body{
-    background:#fafafa
-}
+
 
 
 div.App{
     height: calc(100vh - 400px);
 }
-
-.main button.btn.btn-success{
+ 
+table.table.table-striped{
+    position: absolute;
+    top: 10px;
+    left: 0;
 }
 

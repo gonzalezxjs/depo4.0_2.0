@@ -31,7 +31,7 @@
 
 
 .contact-from{
-    background: #000000;
+    background:  rgb(123, 123, 123);
     border-radius: 10px;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .contact-from  button{
-    background: #050505;
+    background: rgb(90, 90, 90);
     border: none;
     color: rgb(255, 255, 255);
     padding: 1em;
@@ -91,8 +91,8 @@
 .contact-from  button:hover{
      color: rgb(255, 255, 255);
      cursor: pointer;border-radius: 50px;
-     box-shadow: 0 0 2px #da40ee,
-       0 0 10px #da40ee,0 0 15px #da40ee,0 0 20px #da40ee; 
+     box-shadow: 0 0 2px #f5f4f5,
+       0 0 10px #f5f4f5,0 0 15px #f5f4f5,0 0 20px #f5f4f5; 
 }
 
 @media (max-width: 800px) {
