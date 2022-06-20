@@ -11,39 +11,33 @@ const Contactos = () => {
         <div className="contact-wrapper">
           <div className="contact-from">
             <h3>Contactar con servicio de ayuda</h3>
-            <form action>
-              <p>
+            <form action="https://formsubmit.co/445b95f5af24943b73b0d3ba0ed68325" method='POST'>
+            
                 <label>Nombre</label>
-                <input type="text" name="nombre" />
-              </p>
-              <p>
+                <input type="text" name="name" />
+              
+              
                 <label>Correo electronico</label>
                 <input type="email" name="email" />
-              </p>
-              <p>
+              
+              
                 <label>Phone</label>
                 <input type="tel" name="phone" />
-              </p>
-              <p>
+              
+              
                 <label>Asunto</label>
-                <input type="text" name="asunto" />
-              </p>
-              <p className="block">
+                <input type="text" name="subject" />
+              
+            
                 <label>Message</label>
-                <textarea name="message" rows={1} defaultValue={""} />
-              </p>
-             
+                <intput name="comments" rows={1} defaultValue={""} />
+              
+
+                <button type="submit">Send</button>
+                <input type="hidden" name="_captcha" value="false"></input>
+                <input type="hidden" name="_next" value="http://127.0.0.1:3000/admin/"></input>
             </form>
-            <p className="buttom">
-                <button
-                  type="submit"
-                  onClick={() => {
-                    navigate("/");
-                  }}
-                >
-                  Enviar
-                </button>
-              </p>
+
           </div>
         </div>
       </div>
