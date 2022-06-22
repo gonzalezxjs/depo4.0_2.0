@@ -35,6 +35,16 @@ const Login = () => {
     console.log("respuesta desde el evento", respuestaJson);
     const conectado = (respuestaJson.conectado)
     const id_rol = (respuestaJson.id_rol)
+    const error_password = (respuestaJson.error)
+
+    if (conectado == false && error_password == "La clave es incorrecta, vuelva a intentarlo."){
+      alert("La clave es incorrecta, vuelva a intentarlo");
+    }
+
+    if (conectado == false && error_password == "El usuario no existe."){
+      alert("El usuario no existe");
+    }
+
     if(conectado === true &  id_rol == "1"){
       navigate("/admin")
         }else if(conectado === true &  id_rol == "3 "){
