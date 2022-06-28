@@ -10,8 +10,11 @@ import ContactUs from './routes/ContactUs';
 import Test from './Components/Admin/1.2.Test/Test';
 import Perform  from './Components/Admin/1.Perform/Perform_test';
 import Help from './Components/Admin/3.Help/Help';
+import PrivateRoutes from './Components/PrivateRoutes';
 
 function App() {
+
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -23,9 +26,14 @@ function App() {
           <Route path="/recoverpass" element={<RecoverPassword/>}/>
           <Route path="/create" element={<CreateAccount/>}/>
           <Route path="contact_us" element={<ContactUs/>}/>
-          <Route path="/admin/test" element={<Test/>}/>
-          <Route path="/admin/test/go" element={<Perform/>}/>
-          <Route path="/admin/help" element={<Help/>}/>
+          {/* <Route path="/admin/test" element={<Test/>}/> */}
+          
+          <Route exact path='/admin/test/go' element={<PrivateRoutes/>}>
+            <Route exact path='/admin/test/go' element={<Perform/>}/>
+          </Route>
+          
+          {/* <Route  path="/admin/test/go" element={<Perform/>}/> */}
+          <Route  path="/admin/help" element={<Help/>}/>
         </Routes>
       </BrowserRouter>
     </div>

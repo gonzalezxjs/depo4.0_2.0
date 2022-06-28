@@ -1,7 +1,11 @@
 import React from "react";
 import "./Admin.css";
+import LoginApp from "../../Home/5_Login/5.1_Login_form/LoginApp";
 
 const AdminIndex = () => {
+
+    console.log("El valor de la authe es", global.authen);
+
   return (
     <div>
       <div classnam="conteiner">
