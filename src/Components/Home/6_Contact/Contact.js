@@ -30,7 +30,7 @@ const Contactos = () => {
               
             
                 <label>Message</label>
-                <intput name="comments" rows={1} defaultValue={""} />
+                <input type="text" name="comments"  />
               
 
                 <button type="submit">Send</button>

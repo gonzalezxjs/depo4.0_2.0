@@ -26,13 +26,13 @@ function App() {
           <Route path="/recoverpass" element={<RecoverPassword/>}/>
           <Route path="/create" element={<CreateAccount/>}/>
           <Route path="contact_us" element={<ContactUs/>}/>
-          {/* <Route path="/admin/test" element={<Test/>}/> */}
+          <Route path="/admin/test" element={<Test/>}/> 
           
-          <Route exact path='/admin/test/go' element={<PrivateRoutes/>}>
+          {/* <Route exact path='/admin/test/go' element={<PrivateRoutes/>}>
             <Route exact path='/admin/test/go' element={<Perform/>}/>
-          </Route>
+          </Route> */}
           
-          {/* <Route  path="/admin/test/go" element={<Perform/>}/> */}
+           <Route  path="/admin/test/go" element={<Perform/>}/> 
           <Route  path="/admin/help" element={<Help/>}/>
         </Routes>
       </BrowserRouter>

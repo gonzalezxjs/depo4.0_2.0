@@ -45,12 +45,19 @@
     
   }
   
+  form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
   table {
     min-width: max-content;
     background-color: rgb(123, 123, 123);
     border-collapse: separate;
     border-spacing: 0px;
-    margin: auto;
+    margin: 20px auto;
   }
   
   table th {
@@ -85,3 +92,7 @@
     background-color: #999;
   }
   
+
+  input[type="submit"] {
+    margin: auto;
+  }

@@ -14,7 +14,11 @@ const Perform_test = () => {
 
             <div className="outer-wrapper">
       <div className="table-wrapper">
-        <table   >
+        
+        <form method="post">
+
+        <table>
+
           <thead>
             <tr>
               <th >ZONA</th>
@@ -40,6 +44,7 @@ const Perform_test = () => {
               <th>F.C. PARCIAL</th>
             </tr>
           </thead>
+
           <tbody>
 
             <tr className="tr">
@@ -838,7 +843,13 @@ const Perform_test = () => {
             </tr>
             
           </tbody>
+          
         </table>
+
+        <input type="submit"  value="Registrar"></input>
+
+        </form>
+
       </div>
     </div>
 
