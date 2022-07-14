@@ -17,7 +17,7 @@ const UserIndex = () => {
             </li>
 
             <li>
-              <a href="">
+              <a href="/user">
                 <span className="icon">
                   <ion-icon name="home-outline"></ion-icon>
                 </span>
@@ -26,7 +26,7 @@ const UserIndex = () => {
             </li>
 
             <li>
-              <a href="/">
+              <a href="/user/test_view">
                 <span className="icon">
                   <ion-icon name="document-text-outline"></ion-icon>
                 </span>
@@ -45,7 +45,7 @@ const UserIndex = () => {
             </li>
 
             <li>
-              <a href="/">
+              <a href="/user/contact">
                 <span className="icon">
                   <ion-icon name="help-circle-outline"></ion-icon>
                 </span>
@@ -63,8 +63,6 @@ const UserIndex = () => {
             </li>
           </ul>
         </div>
-
-
       </div>
     </div>
   );

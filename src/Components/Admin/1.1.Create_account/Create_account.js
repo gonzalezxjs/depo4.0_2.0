@@ -7,6 +7,7 @@ import Admin from "../1_home dashboard/Admin";
 
 function Create_account() {
   const baseUrl = "http://127.0.0.1:8080/depo/";
+  const [dataNRol, setDataNRol] = useState([]);
   const [dataDoc, setDataDoc] = useState([]);
   const [dataSangre, setDataSangre] = useState([]);
   const [dataRol, setDataRol] = useState([]);
@@ -197,6 +198,17 @@ function Create_account() {
       });
   };
 
+  const peticionNombreRol = async () => {
+    var f = new FormData();
+    f.append("METHOD", "NOMROL");
+    await axios.post(baseUrl, f).then((response) => {
+      setDataNRol(response.data);
+      console.log(response);
+    });
+
+    
+  };
+
   useEffect(() => {
     peticionGet();
   }, []);
@@ -221,6 +233,10 @@ function Create_account() {
     peticionEstado();
   }, []);
 
+  useEffect(() => {
+    peticionNombreRol();
+  }, []);
+
   return (
     <div className="App">
       <Admin></Admin>
@@ -239,17 +255,27 @@ function Create_account() {
               <th>Identificación</th>
               <th>Nombre</th>
               <th>Correo</th>
+              <th>Rol</th>
+              <th>Acciones</th>
             </tr>
           </thead>
+
           <tbody>
             {data.map((Data) => (
               <tr key={Data.id_usu}>
                 <td>{Data.num_docu}</td>
+
                 <td>
                   {Data.nom1_usu} {Data.nom2_usu} {Data.ape1_usu}{" "}
                   {Data.ape2_usu}
                 </td>
+
                 <td>{Data.correo_usu}</td>
+
+                <td>
+                    <td>{Data.id_rol} </td>
+                </td>
+
                 <td>
                   <button
                     className="btn btn-primary"
@@ -443,6 +469,7 @@ function Create_account() {
                 value={dataUsario && dataUsario.id_documento}
               >
                 <option value="">Seleccione un tipo de identificación</option>
+
                 {dataDoc.map((Documento) => (
                   <option value={Documento.id_documento}>
                     {Documento.nom_documento}
@@ -584,7 +611,6 @@ function Create_account() {
                   <option value={Sangre.id_sangre}>{Sangre.nom_sangre}</option>
                 ))}
               </select>
-
             </div>
           </ModalBody>
 

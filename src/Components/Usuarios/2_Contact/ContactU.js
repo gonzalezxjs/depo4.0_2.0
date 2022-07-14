@@ -1,8 +1,21 @@
-import React from 'react'
+import React from 'react';
+import User from '../1_home dashboard/User';
+import Contact from '../../Home/6_Contact/Contact';
+
 
 const ContactU = () => {
   return (
-    <div>ContactU</div>
+    <div>
+      
+      <User>
+      </User>
+
+      <div class="main">
+            <Contact>
+            </Contact>
+      </div>
+
+    </div>
   )
 }
 

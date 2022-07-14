@@ -25,7 +25,7 @@ const AdminIndex = () => {
                 <span className="icon">
                   <ion-icon name="home-outline"></ion-icon>
                 </span>
-                <span className="title">Panel de control</span>
+                <span className="title">Inicio</span>
               </a>
             </li>
 

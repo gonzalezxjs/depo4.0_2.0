@@ -1,0 +1,23 @@
+.main{
+    background-color: white;
+    display: flex;
+
+}
+
+.main .father_test{
+    background-color: black;
+    min-height: 97vh;
+    margin: 5px;
+    display: flex;
+    width: 100%;
+}
+
+
+.main .father_test .son_test{
+    margin: 40px;
+    border: 5px solid white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
