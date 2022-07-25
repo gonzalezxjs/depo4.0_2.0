@@ -34,6 +34,7 @@ function Create_account() {
     id_sangre: "",
   });
 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setDataUsario((prevState) => ({
@@ -44,6 +45,7 @@ function Create_account() {
 
     console.log(dataUsario);
   };
+  
 
   const seleccionarUsuario = (usuario, caso) => {
     setDataUsario(usuario);
@@ -145,11 +147,13 @@ function Create_account() {
     f.append("nom2_usu", dataUsario.nom2_usu);
     f.append("ape1_usu", dataUsario.ape1_usu);
     f.append("ape2_usu", dataUsario.ape2_usu);
+    f.append("fecha_nac_usu", dataUsario.fecha_nac_usu);
     f.append("correo_usu", dataUsario.correo_usu);
     f.append("contrasena_usu", dataUsario.contrasena_usu);
     f.append("id_documento", dataUsario.id_documento);
     f.append("id_estado", dataUsario.id_estado);
     f.append("id_genero", dataUsario.id_genero);
+    f.append("id_rol", dataUsario.id_rol);
     f.append("id_sangre", dataUsario.id_sangre);
     f.append("METHOD", "PUT");
 
@@ -165,11 +169,13 @@ function Create_account() {
             Usuario.nom2_usu = dataUsario.nom2_usu;
             Usuario.ape1_usu = dataUsario.ape1_usu;
             Usuario.ape2_usu = dataUsario.ape2_usu;
+            Usuario.fecha_nac_usu = dataUsario.fecha_nac_usu;
             Usuario.correo_usu = dataUsario.correo_usu;
             Usuario.contrasena_usu = dataUsario.contrasena_usu;
             Usuario.id_documento = dataUsario.id_documento;
             Usuario.id_estado = dataUsario.id_estado;
             Usuario.id_genero = dataUsario.id_genero;
+            Usuario.id_rol = dataUsario.id_rol;
             Usuario.id_sangre = dataUsario.id_sangre;
           }
           console.log(response);
@@ -242,6 +248,7 @@ function Create_account() {
       <Admin></Admin>
 
       <div class="main">
+        
         <button
           className="btn btn-success"
           onClick={() => abrirCerrarModalInsertar()}
@@ -254,6 +261,7 @@ function Create_account() {
             <tr>
               <th>Identificación</th>
               <th>Nombre</th>
+              <th>Fecha nacimiento</th>
               <th>Correo</th>
               <th>Rol</th>
               <th>Acciones</th>
@@ -263,20 +271,22 @@ function Create_account() {
           <tbody>
             {data.map((Data) => (
               <tr key={Data.id_usu}>
-                <td>{Data.num_docu}</td>
+                <th>{Data.num_docu}</th>
 
-                <td>
+                <th>
                   {Data.nom1_usu} {Data.nom2_usu} {Data.ape1_usu}{" "}
                   {Data.ape2_usu}
-                </td>
+                </th>
 
-                <td>{Data.correo_usu}</td>
+                <th>{Data.fecha_nac_usu}</th>
 
-                <td>
-                    <td>{Data.id_rol} </td>
-                </td>
+                <th>{Data.correo_usu}</th>
 
-                <td>
+                <th>
+                    {Data.nom_rol} 
+                </th>
+
+                <th>
                   <button
                     className="btn btn-primary"
                     onClick={() => seleccionarUsuario(Data, "Editar")}
@@ -290,7 +300,7 @@ function Create_account() {
                   >
                     Eliminar
                   </button>
-                </td>
+                </th>
               </tr>
             ))}
           </tbody>
@@ -364,7 +374,7 @@ function Create_account() {
               <label>Fecha de nacimiento:</label>
               <br></br>
               <input
-                type="text"
+                type="date"
                 className="form-control"
                 name="fecha_nac_usu"
                 onChange={handleChange}
@@ -530,7 +540,7 @@ function Create_account() {
               <label>Fecha de nacimiento:</label>
               <br></br>
               <input
-                type="text"
+                type="date"
                 className="form-control"
                 name="fecha_nac_usu"
                 onChange={handleChange}
@@ -623,7 +633,7 @@ function Create_account() {
               className="btn btn-danger"
               onClick={() => abrirCerrarModalEditar()}
             >
-              Cancerlar
+              Cancelar
             </button>
           </ModalFooter>
         </Modal>
@@ -647,6 +657,7 @@ function Create_account() {
             </button>
           </ModalFooter>
         </Modal>
+
       </div>
     </div>
   );

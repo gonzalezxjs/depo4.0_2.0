@@ -49,6 +49,8 @@ function metodoPost($query, $queryAutoIncrement){
 }
 
 
+
+
 function metodoPut($query){
     try{
         conectar();

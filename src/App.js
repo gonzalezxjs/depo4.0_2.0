@@ -36,11 +36,8 @@ function App() {
           <Route  path="/admin/test/view" element={<View_test/>}/>
           <Route  path="/admin/test/go" element={<Perform/>}/> 
           <Route  path="/admin/help" element={<Help/>}/>
-
           <Route  path="/user/contact" element={<ContactU/>}/>
           <Route  path="/user/test_view" element={<View_testU/>}/>
-
-
 
         </Routes>
       </BrowserRouter>

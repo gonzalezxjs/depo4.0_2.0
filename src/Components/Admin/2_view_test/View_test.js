@@ -1,5 +1,6 @@
 import React from "react";
 import Admin from "../1_home dashboard/Admin";
+import './View_test.css';
 
 const View_test = () => {
   return (

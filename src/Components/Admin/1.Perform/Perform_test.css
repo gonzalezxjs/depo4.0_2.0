@@ -52,6 +52,25 @@
     flex-direction: column;
   }
 
+  form p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  form p label{
+    color: aliceblue;
+  }
+
+  form p input{
+    border-radius: 25px;
+    width: 300px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+  }
+
   table {
     min-width: max-content;
     background-color: rgb(123, 123, 123);
