@@ -214,6 +214,7 @@ function View_test() {
 
       <div class="main">
         <table className="table table-striped">
+
           <thead>
             <tr>
               <th>Nombre</th>
@@ -258,6 +259,7 @@ function View_test() {
 
           <ModalBody>
             <table class="table">
+          
               <thead>
                 <tr>
                   <th>ZONA</th>
@@ -312,6 +314,34 @@ function View_test() {
                   <td>{dataTest.informo1}</td>
 
                   <td>{dataTest.f_c_parcial1}</td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+
+                  <td>{dataTest.titere2}</td>
+
+                  <td>{dataTest.gesto2}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.pase_secuencia2}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.pase_desempeno2}
+                  </td>
+
+                  <td>{dataTest.gol2}</td>
+
+                  <td>{dataTest.rebote2}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.control_secuencia2}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.control_desempeno2}
+                  </td>
+
+                  <td>{dataTest.informo2}</td>
+
+                  <td>{dataTest.f_c_parcial2}</td>
                 </tr>
 
               </tbody>
