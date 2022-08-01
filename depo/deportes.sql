@@ -138,7 +138,7 @@ control_secuencia14, control_desempeno14, informo14, f_c_parcial14, titere15, ge
 control_secuencia15, control_desempeno15, informo15, f_c_parcial15 from prueba inner JOIN usuarios on prueba.num_docu = usuarios.num_docu 
 where prueba.num_docu = 1006326446; */
 
-  
+
   
   
   

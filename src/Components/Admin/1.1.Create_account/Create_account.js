@@ -6,7 +6,7 @@ import "./create_account.css";
 import Admin from "../1_home dashboard/Admin";
 
 function Create_account() {
-  const baseUrl = "http://127.0.0.1:8080/depo/";
+  const baseUrl = "http://127.0.0.1:8080/depo/index.php";
   const [dataNRol, setDataNRol] = useState([]);
   const [dataDoc, setDataDoc] = useState([]);
   const [dataSangre, setDataSangre] = useState([]);
@@ -69,6 +69,8 @@ function Create_account() {
   const peticionGet = async () => {
     await axios.get(baseUrl).then((response) => {
       setData(response.data);
+
+      console.log(response);
     });
   };
 
@@ -464,10 +466,12 @@ function Create_account() {
               Cancelar
             </button>
           </ModalFooter>
+        
         </Modal>
 
         <Modal isOpen={modalEditar}>
           <ModalHeader>Editar Contacto</ModalHeader>
+          
           <ModalBody>
             <div className="form-group">
               <label>Tipo de identificación:</label>

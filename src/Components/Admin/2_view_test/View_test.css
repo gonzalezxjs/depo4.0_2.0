@@ -10,3 +10,7 @@
 .main table tbody tr th{
     line-height: 3em;
 }
+
+table.table.table-dark th.aj{
+    line-height: 3em;
+}

@@ -5,7 +5,8 @@ import Admin from "../1_home dashboard/Admin";
 
 function Perform_test() {
   const [data, setData] = useState([]);
-  const baseUrl = "http://127.0.0.1:8080/depo/";
+  const baseUrl2 = "http://127.0.0.1:8080/depo/index2.php";
+
   const [dataTest, setDataTest] = useState({
     fecha_prueba: "",
     num_docu: "",
@@ -356,13 +357,11 @@ function Perform_test() {
     f.append("f_c_parcial15", dataTest.f_c_parcial15);
 
     f.append("METHOD", "TEST");
-    await axios.post(baseUrl, f).then((response) => {
+    await axios.post(baseUrl2, f).then((response) => {
       setData(data.concat(response.data));
       console.log(response);
     });
   };
-
-  
 
   return (
     <div>
@@ -373,14 +372,21 @@ function Perform_test() {
           <div class="son_test">
             <div className="outer-wrapper">
               <div className="table-wrapper">
-                <form>
 
+                <form>
                   <p>
                     <label for="usu">N. identificación</label>
-                    <input type="text" name="num_docu" id="usu" placeholder="N. identificación del deportista" onChange={handleChange}></input>
+                    <input
+                      type="text"
+                      name="num_docu"
+                      id="usu"
+                      placeholder="N. identificación del deportista"
+                      onChange={handleChange}
+                    ></input>
                   </p>
 
-                  <table>
+                  <table >
+
                     <thead>
                       <tr>
                         <th>ZONA</th>
@@ -408,7 +414,7 @@ function Perform_test() {
                     </thead>
 
                     <tbody>
-
+                      
                       <tr className="tr">
                         <td>1</td>
 
@@ -437,6 +443,7 @@ function Perform_test() {
                             name="pase_secuencia1"
                             onChange={handleChange}
                           >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
@@ -445,6 +452,7 @@ function Perform_test() {
                             name="pase_desempeno1"
                             onChange={handleChange}
                           >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -452,13 +460,15 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol1" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote1" onChange={handleChange}>
+                          <select name="rebote1" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
@@ -469,6 +479,7 @@ function Perform_test() {
                             name="control_secuencia1"
                             onChange={handleChange}
                           >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
@@ -477,6 +488,7 @@ function Perform_test() {
                             name="control_desempeno1"
                             onChange={handleChange}
                           >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -484,6 +496,7 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo1" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
@@ -526,6 +539,7 @@ function Perform_test() {
                             name="pase_secuencia2"
                             onChange={handleChange}
                           >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
@@ -534,6 +548,7 @@ function Perform_test() {
                             name="pase_desempeno2"
                             onChange={handleChange}
                           >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -541,13 +556,15 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol2" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote2" onChange={handleChange}>
+                          <select name="rebote2" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
@@ -558,6 +575,7 @@ function Perform_test() {
                             name="control_secuencia2"
                             onChange={handleChange}
                           >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
@@ -566,6 +584,7 @@ function Perform_test() {
                             name="control_desempeno2"
                             onChange={handleChange}
                           >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -573,6 +592,7 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo2" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
@@ -615,6 +635,7 @@ function Perform_test() {
                             name="pase_secuencia3"
                             onChange={handleChange}
                           >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
@@ -623,6 +644,7 @@ function Perform_test() {
                             name="pase_desempeno3"
                             onChange={handleChange}
                           >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -630,13 +652,15 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol3" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote3" onChange={handleChange}>
+                          <select name="rebote3" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
@@ -647,6 +671,7 @@ function Perform_test() {
                             name="control_secuencia3"
                             onChange={handleChange}
                           >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
@@ -655,6 +680,7 @@ function Perform_test() {
                             name="control_desempeno3"
                             onChange={handleChange}
                           >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -662,6 +688,7 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo3" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
@@ -690,16 +717,30 @@ function Perform_test() {
                         </td>
 
                         <td>
-                          <input type="number" min="0" max="20" name="gesto4" onChange={handleChange} />
+                          <input
+                            type="number"
+                            min="0"
+                            max="20"
+                            name="gesto4"
+                            onChange={handleChange}
+                          />
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="pase_secuencia4" onChange={handleChange}>
+                          <select
+                            name="pase_secuencia4"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="pase_desempeno4" onChange={handleChange}>
+                          <select
+                            name="pase_desempeno4"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -707,25 +748,35 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol4" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote4" onChange={handleChange}>
+                          <select name="rebote4" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="control_secuencia4" onChange={handleChange}>
+                          <select
+                            name="control_secuencia4"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="control_desempeno4" onChange={handleChange}>
+                          <select
+                            name="control_desempeno4"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -733,13 +784,18 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo4" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td>
-                          <input type="number" name="f_c_parcial4" onChange={handleChange}/>
+                          <input
+                            type="number"
+                            name="f_c_parcial4"
+                            onChange={handleChange}
+                          />
                         </td>
                       </tr>
 
@@ -757,16 +813,30 @@ function Perform_test() {
                         </td>
 
                         <td>
-                          <input type="number" min="0" max="20" name="gesto5" onChange={handleChange}/>
+                          <input
+                            type="number"
+                            min="0"
+                            max="20"
+                            name="gesto5"
+                            onChange={handleChange}
+                          />
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="pase_secuencia5" onChange={handleChange}>
+                          <select
+                            name="pase_secuencia5"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="pase_desempeno5" onChange={handleChange}>
+                          <select
+                            name="pase_desempeno5"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -774,25 +844,35 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol5" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote5" onChange={handleChange}>
+                          <select name="rebote5" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="control_secuencia5" onChange={handleChange}>
+                          <select
+                            name="control_secuencia5"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="control_desempeno5" onChange={handleChange}>
+                          <select
+                            name="control_desempeno5"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -800,13 +880,18 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo5" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td>
-                          <input type="number" name="f_c_parcial5" onChange={handleChange}/>
+                          <input
+                            type="number"
+                            name="f_c_parcial5"
+                            onChange={handleChange}
+                          />
                         </td>
                       </tr>
 
@@ -824,16 +909,30 @@ function Perform_test() {
                         </td>
 
                         <td>
-                          <input type="number" min="0" max="20" name="gesto6" onChange={handleChange}/>
+                          <input
+                            type="number"
+                            min="0"
+                            max="20"
+                            name="gesto6"
+                            onChange={handleChange}
+                          />
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="pase_secuencia6" onChange={handleChange}>
+                          <select
+                            name="pase_secuencia6"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="pase_desempeno6" onChange={handleChange} >
+                          <select
+                            name="pase_desempeno6"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -841,6 +940,7 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol6" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
@@ -848,18 +948,27 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select value="rebote6" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="control_secuencia6" onChange={handleChange}>
+                          <select
+                            name="control_secuencia6"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="control_desempeno6" onChange={handleChange}>
+                          <select
+                            name="control_desempeno6"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -867,13 +976,18 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo6" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td>
-                          <input type="number" name="f_c_parcial6" onChange={handleChange} />
+                          <input
+                            type="number"
+                            name="f_c_parcial6"
+                            onChange={handleChange}
+                          />
                         </td>
                       </tr>
 
@@ -891,16 +1005,30 @@ function Perform_test() {
                         </td>
 
                         <td>
-                          <input type="number" min="0" max="20" name="gesto7" onChange={handleChange} />
+                          <input
+                            type="number"
+                            min="0"
+                            max="20"
+                            name="gesto7"
+                            onChange={handleChange}
+                          />
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="pase_secuencia7" onChange={handleChange}>
+                          <select
+                            name="pase_secuencia7"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="pase_desempeno7" onChange={handleChange}>
+                          <select
+                            name="pase_desempeno7"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -908,25 +1036,35 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol7" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote7" onChange={handleChange}>
+                          <select name="rebote7" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="control_secuencia7" onChange={handleChange}>
+                          <select
+                            name="control_secuencia7"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="control_desempeno7" onChange={handleChange}>
+                          <select
+                            name="control_desempeno7"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -934,13 +1072,18 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo7" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td>
-                          <input type="number" name="f_c_parcial7" onChange={handleChange}/>
+                          <input
+                            type="number"
+                            name="f_c_parcial7"
+                            onChange={handleChange}
+                          />
                         </td>
                       </tr>
 
@@ -958,16 +1101,30 @@ function Perform_test() {
                         </td>
 
                         <td>
-                          <input type="number" min="0" max="20" name="gesto8" onChange={handleChange}/>
+                          <input
+                            type="number"
+                            min="0"
+                            max="20"
+                            name="gesto8"
+                            onChange={handleChange}
+                          />
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="pase_secuencia8" onChange={handleChange}>
+                          <select
+                            name="pase_secuencia8"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="pase_desempeno8" onChange={handleChange}>
+                          <select
+                            name="pase_desempeno8"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -975,25 +1132,35 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol8" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote8" onChange={handleChange}>
+                          <select name="rebote8" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="control_secuencia8" onChange={handleChange}>
+                          <select
+                            name="control_secuencia8"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="control_desempeno8" onChange={handleChange}>
+                          <select
+                            name="control_desempeno8"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1001,13 +1168,18 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo8" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td>
-                          <input type="number" name="f_c_parcial8" onChange={handleChange} />
+                          <input
+                            type="number"
+                            name="f_c_parcial8"
+                            onChange={handleChange}
+                          />
                         </td>
                       </tr>
 
@@ -1025,16 +1197,30 @@ function Perform_test() {
                         </td>
 
                         <td>
-                          <input type="number" min="0" max="20" name="gesto9" onChange={handleChange}/>
+                          <input
+                            type="number"
+                            min="0"
+                            max="20"
+                            name="gesto9"
+                            onChange={handleChange}
+                          />
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="pase_secuencia9" onChange={handleChange}>
+                          <select
+                            name="pase_secuencia9"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="pase_desempeno9" onChange={handleChange}>
+                          <select
+                            name="pase_desempeno9"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1042,25 +1228,35 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol9" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote9" onChange={handleChange}>
+                          <select name="rebote9" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="control_secuencia9" onChange={handleChange}>
+                          <select
+                            name="control_secuencia9"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="control_desempeno9" onChange={handleChange}>
+                          <select
+                            name="control_desempeno9"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1068,13 +1264,18 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo9" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td>
-                          <input type="number" name="f_c_parcial9" onChange={handleChange}/>
+                          <input
+                            type="number"
+                            name="f_c_parcial9"
+                            onChange={handleChange}
+                          />
                         </td>
                       </tr>
 
@@ -1102,12 +1303,20 @@ function Perform_test() {
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="pase_secuencia10" onChange={handleChange}>
+                          <select
+                            name="pase_secuencia10"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="pase_desempeno10" onChange={handleChange}>
+                          <select
+                            name="pase_desempeno10"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1115,25 +1324,35 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol10" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote10" onChange={handleChange}>
+                          <select name="rebote10" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="control_secuencia10" onChange={handleChange}>
+                          <select
+                            name="control_secuencia10"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="control_desempeno10" onChange={handleChange}>
+                          <select
+                            name="control_desempeno10"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1141,13 +1360,18 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo10" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td>
-                          <input type="number" name="f_c_parcial10" onChange={handleChange}/>
+                          <input
+                            type="number"
+                            name="f_c_parcial10"
+                            onChange={handleChange}
+                          />
                         </td>
                       </tr>
 
@@ -1175,12 +1399,20 @@ function Perform_test() {
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="pase_secuencia11" onChange={handleChange}>
+                          <select
+                            name="pase_secuencia11"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="pase_desempeno11" onChange={handleChange}>
+                          <select
+                            name="pase_desempeno11"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1188,25 +1420,35 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol11" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote11" onChange={handleChange}>
+                          <select name="rebote11" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="control_secuencia11" onChange={handleChange}>
+                          <select
+                            name="control_secuencia11"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="control_desempeno11" onChange={handleChange}>
+                          <select
+                            name="control_desempeno11"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1214,13 +1456,18 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo11" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td>
-                          <input type="number" name="f_c_parcial11" onChange={handleChange}/>
+                          <input
+                            type="number"
+                            name="f_c_parcial11"
+                            onChange={handleChange}
+                          />
                         </td>
                       </tr>
 
@@ -1248,12 +1495,20 @@ function Perform_test() {
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="pase_secuencia12" onChange={handleChange}>
+                          <select
+                            name="pase_secuencia12"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="pase_desempeno12" onChange={handleChange}>
+                          <select
+                            name="pase_desempeno12"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1261,25 +1516,35 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol12" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote12" onChange={handleChange}>
+                          <select name="rebote12" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="control_secuencia12" onChange={handleChange}>
+                          <select
+                            name="control_secuencia12"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="control_desempeno12" onChange={handleChange}>
+                          <select
+                            name="control_desempeno12"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1287,13 +1552,18 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo12" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td>
-                          <input type="number" name="f_c_parcial12" onChange={handleChange}/>
+                          <input
+                            type="number"
+                            name="f_c_parcial12"
+                            onChange={handleChange}
+                          />
                         </td>
                       </tr>
 
@@ -1321,12 +1591,20 @@ function Perform_test() {
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="pase_secuencia13" onChange={handleChange}>
+                          <select
+                            name="pase_secuencia13"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="pase_desempeno13" onChange={handleChange}>
+                          <select
+                            name="pase_desempeno13"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1334,25 +1612,35 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol13" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote13" onChange={handleChange}>
+                          <select name="rebote13" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="control_secuencia13" onChange={handleChange}>
+                          <select
+                            name="control_secuencia13"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="control_desempeno13" onChange={handleChange}>
+                          <select
+                            name="control_desempeno13"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1360,13 +1648,18 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo13" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td>
-                          <input type="number" name="f_c_parcial13" onChange={handleChange} />
+                          <input
+                            type="number"
+                            name="f_c_parcial13"
+                            onChange={handleChange}
+                          />
                         </td>
                       </tr>
 
@@ -1394,12 +1687,20 @@ function Perform_test() {
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="pase_secuencia14" onChange={handleChange}>
+                          <select
+                            name="pase_secuencia14"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="pase_desempeno14" onChange={handleChange}>
+                          <select
+                            name="pase_desempeno14"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1407,25 +1708,35 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol14" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote14" onChange={handleChange}>
+                          <select name="rebote14" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="control_secuencia14" onChange={handleChange}>
+                          <select
+                            name="control_secuencia14"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="control_desempeno14" onChange={handleChange}>
+                          <select
+                            name="control_desempeno14"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1433,13 +1744,18 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo14" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td>
-                          <input type="number" name="f_c_parcial14" onChange={handleChange}/>
+                          <input
+                            type="number"
+                            name="f_c_parcial14"
+                            onChange={handleChange}
+                          />
                         </td>
                       </tr>
 
@@ -1467,12 +1783,20 @@ function Perform_test() {
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="pase_secuencia15" onChange={handleChange}>
+                          <select
+                            name="pase_secuencia15"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="pase_desempeno15" onChange={handleChange}>
+                          <select
+                            name="pase_desempeno15"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1480,25 +1804,35 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="gol15" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote15" onChange={handleChange}>
+                          <select name="rebote15" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td colSpan={2} className="tduno">
-                          <select name="control_secuencia15" onChange={handleChange}>
+                          <select
+                            name="control_secuencia15"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Derecha">Derecha</option>
                             <option value="Izquierda">Izquierda</option>
                           </select>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <select name="control_desempeno15" onChange={handleChange}>
+                          <select
+                            name="control_desempeno15"
+                            onChange={handleChange}
+                          >
+                            <option disabled selected value>Seleccionar</option>
                             <option value="Bien">Bien</option>
                             <option value="Mal">Mal</option>
                           </select>
@@ -1506,29 +1840,39 @@ function Perform_test() {
 
                         <td className="tduno">
                           <select name="informo15" onChange={handleChange}>
+                            <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
                           </select>
                         </td>
 
                         <td>
-                          <input type="number" name="f_c_parcial15" onChange={handleChange} />
+                          <input
+                            type="number"
+                            name="f_c_parcial15"
+                            onChange={handleChange}
+                          />
                         </td>
                       </tr>
-                      
+
                     </tbody>
+
                   </table>
 
-                  <button  type="submit" className="btn btn-primary" onClick={() => peticionTest()}>
-                      Insertar
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    onClick={() => peticionTest()}
+                  >
+                    Insertar
                   </button>
-
                 </form>
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   );
 }
