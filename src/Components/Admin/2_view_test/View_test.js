@@ -7,7 +7,8 @@ import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 function View_test() {
   const baseUrl = "http://127.0.0.1:8080/depo/index2.php";
   const [modalVer, setModalVer] = useState(false);
-
+  const [modalEliminar, setModalEliminar] = useState(false);
+  const [data, setData] = useState([]);
   //  Datos
   const [dataTest, setDataTest] = useState({
     id_prueba: "",
@@ -195,14 +196,42 @@ function View_test() {
     setModalVer(!modalVer);
   };
 
-  const seleccionarTest = (test, caso) => {
-    setDataTest(test);
-    console.log("aquí está" + test);
-
-    caso === "Ver" && abrirCerrarModalVer();
+  const abrirCerrarModalEliminar = () => {
+    setModalEliminar(!modalEliminar);
   };
 
-  const [data, setData] = useState([]);
+  const seleccionarTest = (test, caso) => {
+    setDataTest(test);
+    console.log("aquí está" + Object.values(test));
+
+    if(caso == "Ver"){
+        abrirCerrarModalVer();
+    };
+
+    if(caso == "Eliminar"){
+      abrirCerrarModalEliminar();
+    };
+  
+    
+  };
+
+
+  const peticionDelete = async () => {
+    var f = new FormData();
+
+    f.append("METHOD", "DELETE");
+    await axios
+      .post(baseUrl, f, { params: { id_prueba: dataTest.id_prueba} })
+      .then((response) => {
+        setData(data.filter((Test) => Test.id_prueba !== dataTest.id_prueba));
+        abrirCerrarModalEliminar();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  
 
   useEffect(() => {
     peticionGet();
@@ -243,7 +272,9 @@ function View_test() {
                   >
                     Ver resultados
                   </button>
-                  <button className="btn btn-danger">Eliminar</button>
+                  <button className="btn btn-danger"
+                    onClick={() => seleccionarTest(Data, "Eliminar")}
+                  >Eliminar</button>
                 </th>
               </tr>
             ))}
@@ -344,6 +375,370 @@ function View_test() {
                   <td>{dataTest.f_c_parcial2}</td>
                 </tr>
 
+                <tr>
+                  <td>3</td>
+
+                  <td>{dataTest.titere3}</td>
+
+                  <td>{dataTest.gesto3}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.pase_secuencia3}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.pase_desempeno3}
+                  </td>
+
+                  <td>{dataTest.gol3}</td>
+
+                  <td>{dataTest.rebote3}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.control_secuencia3}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.control_desempeno3}
+                  </td>
+
+                  <td>{dataTest.informo3}</td>
+
+                  <td>{dataTest.f_c_parcial3}</td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+
+                  <td>{dataTest.titere4}</td>
+
+                  <td>{dataTest.gesto4}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.pase_secuencia4}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.pase_desempeno4}
+                  </td>
+
+                  <td>{dataTest.gol4}</td>
+
+                  <td>{dataTest.rebote4}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.control_secuencia4}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.control_desempeno4}
+                  </td>
+
+                  <td>{dataTest.informo4}</td>
+
+                  <td>{dataTest.f_c_parcial4}</td>
+                </tr>
+
+                <tr>
+                  <td>5</td>
+
+                  <td>{dataTest.titere5}</td>
+
+                  <td>{dataTest.gesto5}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.pase_secuencia5}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.pase_desempeno5}
+                  </td>
+
+                  <td>{dataTest.gol5}</td>
+
+                  <td>{dataTest.rebote5}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.control_secuencia5}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.control_desempeno5}
+                  </td>
+
+                  <td>{dataTest.informo5}</td>
+
+                  <td>{dataTest.f_c_parcial5}</td>
+                </tr>
+
+                <tr>
+                  <td>6</td>
+
+                  <td>{dataTest.titere6}</td>
+
+                  <td>{dataTest.gesto6}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.pase_secuencia6}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.pase_desempeno6}
+                  </td>
+
+                  <td>{dataTest.gol6}</td>
+
+                  <td>{dataTest.rebote6}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.control_secuencia6}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.control_desempeno6}
+                  </td>
+
+                  <td>{dataTest.informo6}</td>
+
+                  <td>{dataTest.f_c_parcial6}</td>
+                </tr>
+
+                <tr>
+                  <td>7</td>
+
+                  <td>{dataTest.titere7}</td>
+
+                  <td>{dataTest.gesto7}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.pase_secuencia7}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.pase_desempeno7}
+                  </td>
+
+                  <td>{dataTest.gol7}</td>
+
+                  <td>{dataTest.rebote7}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.control_secuencia7}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.control_desempeno7}
+                  </td>
+
+                  <td>{dataTest.informo7}</td>
+
+                  <td>{dataTest.f_c_parcial7}</td>
+                </tr>
+
+                <tr>
+                  <td>8</td>
+
+                  <td>{dataTest.titere8}</td>
+
+                  <td>{dataTest.gesto8}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.pase_secuencia8}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.pase_desempeno8}
+                  </td>
+
+                  <td>{dataTest.gol8}</td>
+
+                  <td>{dataTest.rebote8}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.control_secuencia8}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.control_desempeno8}
+                  </td>
+
+                  <td>{dataTest.informo8}</td>
+
+                  <td>{dataTest.f_c_parcial8}</td>
+                </tr>
+
+                <tr>
+                  <td>9</td>
+
+                  <td>{dataTest.titere9}</td>
+
+                  <td>{dataTest.gesto9}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.pase_secuencia9}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.pase_desempeno9}
+                  </td>
+
+                  <td>{dataTest.gol9}</td>
+
+                  <td>{dataTest.rebote9}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.control_secuencia9}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.control_desempeno9}
+                  </td>
+
+                  <td>{dataTest.informo9}</td>
+
+                  <td>{dataTest.f_c_parcial9}</td>
+                </tr>
+
+                <tr>
+                  <td>10</td>
+
+                  <td>{dataTest.titere10}</td>
+
+                  <td>{dataTest.gesto10}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.pase_secuencia10}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.pase_desempeno10}
+                  </td>
+
+                  <td>{dataTest.gol10}</td>
+
+                  <td>{dataTest.rebote10}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.control_secuencia10}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.control_desempeno10}
+                  </td>
+
+                  <td>{dataTest.informo10}</td>
+
+                  <td>{dataTest.f_c_parcial10}</td>
+                </tr>
+
+                <tr>
+                  <td>11</td>
+
+                  <td>{dataTest.titere11}</td>
+
+                  <td>{dataTest.gesto11}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.pase_secuencia11}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.pase_desempeno11}
+                  </td>
+
+                  <td>{dataTest.gol11}</td>
+
+                  <td>{dataTest.rebote11}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.control_secuencia11}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.control_desempeno11}
+                  </td>
+
+                  <td>{dataTest.informo11}</td>
+
+                  <td>{dataTest.f_c_parcial11}</td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+
+                  <td>{dataTest.titere12}</td>
+
+                  <td>{dataTest.gesto12}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.pase_secuencia12}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.pase_desempeno12}
+                  </td>
+
+                  <td>{dataTest.gol12}</td>
+
+                  <td>{dataTest.rebote12}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.control_secuencia12}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.control_desempeno12}
+                  </td>
+
+                  <td>{dataTest.informo12}</td>
+
+                  <td>{dataTest.f_c_parcial12}</td>
+                </tr>
+
+                <tr>
+                  <td>13</td>
+
+                  <td>{dataTest.titere13}</td>
+
+                  <td>{dataTest.gesto13}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.pase_secuencia13}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.pase_desempeno13}
+                  </td>
+
+                  <td>{dataTest.gol13}</td>
+
+                  <td>{dataTest.rebote13}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.control_secuencia13}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.control_desempeno13}
+                  </td>
+
+                  <td>{dataTest.informo13}</td>
+
+                  <td>{dataTest.f_c_parcial13}</td>
+                </tr>
+
+                <tr>
+                  <td>14</td>
+
+                  <td>{dataTest.titere14}</td>
+
+                  <td>{dataTest.gesto14}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.pase_secuencia14}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.pase_desempeno14}
+                  </td>
+
+                  <td>{dataTest.gol14}</td>
+
+                  <td>{dataTest.rebote14}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.control_secuencia14}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.control_desempeno14}
+                  </td>
+
+                  <td>{dataTest.informo14}</td>
+
+                  <td>{dataTest.f_c_parcial14}</td>
+                </tr>
+
+                <tr>
+                  <td>15</td>
+
+                  <td>{dataTest.titere15}</td>
+
+                  <td>{dataTest.gesto15}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.pase_secuencia15}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.pase_desempeno15}
+                  </td>
+
+                  <td>{dataTest.gol15}</td>
+
+                  <td>{dataTest.rebote15}</td>
+
+                  <td colSpan={2}>
+                    {dataTest.control_secuencia15}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {dataTest.control_desempeno15}
+                  </td>
+
+                  <td>{dataTest.informo15}</td>
+
+                  <td>{dataTest.f_c_parcial15}</td>
+                </tr>
+
               </tbody>
             </table>
           </ModalBody>
@@ -357,6 +752,24 @@ function View_test() {
             </button>
           </ModalFooter>
         </Modal>
+        
+        <Modal isOpen={modalEliminar}>
+          <ModalBody>
+            ¿Está seguro que desea eliminar este test?
+          </ModalBody>
+          <ModalFooter>
+            <button className="btn btn-danger" onClick={() => peticionDelete()}>
+              Sí
+            </button>
+            <button
+              className="btn btn-secondary"
+              onClick={() => abrirCerrarModalEliminar()}
+            >
+              No
+            </button>
+          </ModalFooter>
+        </Modal>
+
       </div>
     </div>
   );

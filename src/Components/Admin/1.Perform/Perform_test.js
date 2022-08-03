@@ -32,6 +32,7 @@ function Perform_test() {
     control_desempeno2: "",
     informo2: "",
     f_c_parcial2: "",
+
     titere3: "",
     gesto3: "",
     pase_secuencia3: "",
@@ -273,7 +274,7 @@ function Perform_test() {
     f.append("pase_secuencia8", dataTest.pase_secuencia8);
     f.append("pase_desempeno8", dataTest.pase_desempeno8);
     f.append("gol8", dataTest.gol8);
-    f.append("rebote7", dataTest.rebote8);
+    f.append("rebote8", dataTest.rebote8);
     f.append("control_secuencia8", dataTest.control_secuencia8);
     f.append("control_desempeno8", dataTest.control_desempeno8);
     f.append("informo8", dataTest.informo8);
@@ -284,7 +285,7 @@ function Perform_test() {
     f.append("pase_secuencia9", dataTest.pase_secuencia9);
     f.append("pase_desempeno9", dataTest.pase_desempeno9);
     f.append("gol9", dataTest.gol9);
-    f.append("rebote9", dataTest.rebote8);
+    f.append("rebote9", dataTest.rebote9);
     f.append("control_secuencia9", dataTest.control_secuencia9);
     f.append("control_desempeno9", dataTest.control_desempeno9);
     f.append("informo9", dataTest.informo9);
@@ -295,7 +296,7 @@ function Perform_test() {
     f.append("pase_secuencia10", dataTest.pase_secuencia10);
     f.append("pase_desempeno10", dataTest.pase_desempeno10);
     f.append("gol10", dataTest.gol10);
-    f.append("rebote10", dataTest.rebote8);
+    f.append("rebote10", dataTest.rebote10);
     f.append("control_secuencia10", dataTest.control_secuencia10);
     f.append("control_desempeno10", dataTest.control_desempeno10);
     f.append("informo10", dataTest.informo10);
@@ -328,7 +329,7 @@ function Perform_test() {
     f.append("pase_secuencia13", dataTest.pase_secuencia13);
     f.append("pase_desempeno13", dataTest.pase_desempeno13);
     f.append("gol13", dataTest.gol13);
-    f.append("rebote13", dataTest.rebote1);
+    f.append("rebote13", dataTest.rebote13);
     f.append("control_secuencia13", dataTest.control_secuencia13);
     f.append("control_desempeno13", dataTest.control_desempeno13);
     f.append("informo13", dataTest.informo13);
@@ -359,6 +360,7 @@ function Perform_test() {
     f.append("METHOD", "TEST");
     await axios.post(baseUrl2, f).then((response) => {
       setData(data.concat(response.data));
+      window.location.reload(true);
       console.log(response);
     });
   };
@@ -415,7 +417,7 @@ function Perform_test() {
 
                     <tbody>
                       
-                      <tr className="tr">
+                    <tr className="tr">
                         <td>1</td>
 
                         <td>
@@ -509,7 +511,7 @@ function Perform_test() {
                             onChange={handleChange}
                           />
                         </td>
-                      </tr>
+                    </tr>
 
                       <tr className="tr">
                         <td>2</td>
@@ -947,7 +949,7 @@ function Perform_test() {
                         </td>
 
                         <td className="tduno">
-                          <select value="rebote6" onChange={handleChange}>
+                          <select name="rebote6" onChange={handleChange}>
                             <option disabled selected value >Seleccionar</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
@@ -1867,6 +1869,7 @@ function Perform_test() {
                     Insertar
                   </button>
                 </form>
+
               </div>
             </div>
           </div>

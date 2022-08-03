@@ -14,6 +14,7 @@ import PrivateRoutes from './Components/PrivateRoutes';
 import View_test from './Components/Admin/2_view_test/View_test'
 import ContactU from './Components/Usuarios/2_Contact/ContactU';
 import View_testU from './Components/Usuarios/3_test/View_testU';
+import Error404 from './Components/Home/Error_404/Error404';
 
 function App() {
 
@@ -38,7 +39,7 @@ function App() {
           <Route  path="/admin/help" element={<Help/>}/>
           <Route  path="/user/contact" element={<ContactU/>}/>
           <Route  path="/user/test_view" element={<View_testU/>}/>
-
+          <Route  path="*" element={<Error404/>}/>
         </Routes>
       </BrowserRouter>
     </div>
