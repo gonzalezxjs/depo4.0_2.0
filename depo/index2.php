@@ -4,6 +4,18 @@ include 'bd/BD.php';
 date_default_timezone_set('America/Bogota');
 header('Access-Control-Allow-Origin: *');
 
+//consulta  usuarios que realizaron test con sus nombre, no acepta duplicados
+// SELECT DISTINCT usuarios.nom1_usu, usuarios.nom2_usu, usuarios.ape1_usu, usuarios.ape2_usu FROM usuarios 
+// INNER JOIN prueba on prueba.num_docu = usuarios.num_docu;
+
+
+// Listar test realizados por x Usuario ordenadas por fecha
+// SELECT * from prueba WHERE prueba.num_docu = 1006326446 ORDER by prueba.fecha_prueba;
+
+//Ver resultados de una x prueba
+// SELECT * from prueba WHERE prueba.id_prueba = 41;
+
+
 
 if($_SERVER['REQUEST_METHOD']=='GET'){
     $query="select prueba.id_prueba, prueba.num_docu, usuarios.nom1_usu, usuarios.nom2_usu, usuarios.ape1_usu, usuarios.ape2_usu, fecha_prueba, titere1, gesto1, pase_secuencia1, 
@@ -30,6 +42,8 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
 
 if($_POST['METHOD']=='TEST'){
     unset($_POST['METHOD']);
+
+    $archivoActual = $_SERVER['PHP_SELF'];
     
     $num_docu = $_POST['num_docu'];
     $fecha_prueba = $_POST['fecha_prueba'];
@@ -51,7 +65,7 @@ if($_POST['METHOD']=='TEST'){
     $pase_secuencia2 = $_POST['pase_secuencia2'];
     $pase_desempeno2 =$_POST['pase_desempeno2'];
     $gol2 = $_POST['gol2'];
-    $rebote3 = $_POST['rebote3'];
+    $rebote2 = $_POST['rebote2'];
     $control_secuencia2 = $_POST['control_secuencia2'];
     $control_desempeno2 =$_POST['control_desempeno2'];
     $informo2 = $_POST['informo2'];
@@ -253,15 +267,15 @@ if($_POST['METHOD']=='TEST'){
     $queryAutoIncrement="select MAX(id_prueba) as id_prueba from frameworks";
     $resultado=metodoPost($query, $queryAutoIncrement);
     echo json_encode($resultado);
-    header("HTTP/1.1 200 OK");
+    header("Refresh:0; url=$archivoActual");
     exit();
 }
 
 
 if($_POST['METHOD']=='DELETE'){
     unset($_POST['METHOD']);
-    $id=$_GET['id_usu'];
-    $query="DELETE FROM usuarios WHERE id_usu='$id'";
+    $id=$_GET['id_prueba'];
+    $query="DELETE FROM prueba WHERE id_prueba ='$id'";
     $resultado=metodoDelete($query);
     echo json_encode($resultado);
     header("HTTP/1.1 200 OK");
